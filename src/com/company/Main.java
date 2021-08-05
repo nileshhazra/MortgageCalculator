@@ -1,33 +1,16 @@
 package com.company;
 
-import java.text.NumberFormat;
-import java.util.Locale;
-import java.util.Scanner;
-
 public class Main {
 
     public static void main(String[] args) {
-        final byte MONTHS_IN_YEAR = 12;
-        final byte PERCENT = 100;
+        int principal = (int) Console.readNumber("Principal: ", 1000, 1_000_000);
+        float annualInterest = (float) Console.readNumber("Annual Interest Rate: ", 1, 30);
+        byte years = (byte) Console.readNumber("Period (Years): ", 1, 30);
 
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Principal: ");
-        int principal = scanner.nextInt();
-
-        System.out.println("Annual Interest Rate: ");
-        float annualInterest = scanner.nextFloat();
-        float monthlyInterest = annualInterest / PERCENT / MONTHS_IN_YEAR;
-
-        System.out.println("Period (Years): ");
-        byte years = scanner.nextByte();
-
-        int numberOfPayments = years * MONTHS_IN_YEAR;
-
-        double mortgage = principal * (monthlyInterest * Math.pow(1+ monthlyInterest, numberOfPayments))/
-                (Math.pow(1+ monthlyInterest, numberOfPayments) - 1);
-
-        String mortgageFormatted = NumberFormat.getCurrencyInstance(Locale.US).format(mortgage);
-        System.out.println("Mortgage: " + mortgageFormatted);
+        var calculator = new MortgageCalculator(principal, annualInterest, years);
+        var report = new MortgageReport(calculator);
+        report.printMortgage();
+        report.printPaymentSchedule();
     }
+
 }
