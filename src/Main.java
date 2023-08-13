@@ -7,9 +7,9 @@ public class Main {
         final byte PERCENT = 100;
 
         Scanner scanner = new Scanner(System.in);
-        int principal = 0;
-        float monthlyInterest = 0;
-        int numberOfPayments = 0;
+        int principal;
+        float monthlyInterest;
+        int numberOfPayments;
 
         while(true) {
         System.out.println("Principal ($1k - $1m): ");
