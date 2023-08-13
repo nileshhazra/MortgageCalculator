@@ -6,6 +6,14 @@
 
 The Java Mortgage Calculator Console Application is a clean, well-structured implementation of a mortgage calculator using fundamental Java programming concepts and adhering to best practices and clean coding principles. This console application allows users to input key parameters such as loan amount, interest rate, and loan term to calculate their monthly mortgage payments.
 
+To run - 
+* Download the artifact [.jar] file
+* Execute -
+```
+java -jar <file-name>.jar
+```
+
+
 ## About Java
 
 Java, a widely popular programming language was created by a guy named James Gosling back in the mid-1990s. Fun fact: it used to go by the names Oak and Green before it became Java.
